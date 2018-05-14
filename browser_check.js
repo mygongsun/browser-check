@@ -22,8 +22,6 @@ var BrowserCheck = (function() {
      */
     BrowserCheck.prototype.get = function() {
 
-    	console.log("this", this);
-
 		var s;
 
 		if(s = this.ua.match(/msie ([\d.]+)/)) {
