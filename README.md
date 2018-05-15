@@ -1,7 +1,13 @@
 # browser-check
 Browser Check
 
-get
+use
+
+	<script type="text/javascript" src="./browser_check.js"></script>
+	<script type="text/javascript">
+		var bcObject = new BrowserCheck();
+		var browserInfo = bcObject.get();
+	</script>
 
 browser
 

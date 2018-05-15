@@ -10,10 +10,10 @@
 
 		<script type="text/javascript" src="./browser_check.js"></script>
 		<script type="text/javascript">
-			var browser = new BrowserCheck();
-			var browserJson = browser.get();
-			// console.log("browser", " platform:", browserJson.platform, " type:", browserJson.type, " all:", browserJson.version.all, " major:", browserJson.version.major);
-			console.log("browser", browser);
+			var bcObject = new BrowserCheck();
+			var browserInfo = bcObject.get();
+			// console.log("browserInfo", " platform:", browserInfo.platform, " type:", browserInfo.type, " all:", browserInfo.version.all, " major:", browserInfo.version.major);
+			console.log("browserInfo", browserInfo);
 		</script>
 	</body>
 </html>
