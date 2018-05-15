@@ -22,10 +22,16 @@ var BrowserCheck = (function() {
      */
     BrowserCheck.prototype.get = function() {
 
-		var s;
+		var s = null;
 
-		if(s = this.ua.match(/msie ([\d.]+)/)) {
+		if(s = this.ua.match(/edge\/([\d.]+)/)) {
+			this.browser.type = "edge";
+		} else if(s = this.ua.match(/rv:([\d.]+)\) like gecko/)) {
 			this.browser.type = "ie";
+		} else if(s = this.ua.match(/msie ([\d.]+)/)) {
+			this.browser.type = "ie";
+		} else if(s = this.ua.match(/qqbrowser\/([\d.]+)/)) {
+			this.browser.type = "qq";
 		} else if(s = this.ua.match(/opr.([\d.]+)/)) {
 			this.browser.type = "opera";
 		} else if(s = this.ua.match(/opera.([\d.]+)/)) {
@@ -44,6 +50,10 @@ var BrowserCheck = (function() {
 			this.browser.version = {};
 			this.browser.version.all = s[1] ? s[1] : 0;
 			this.browser.version.major = s[1] ? s[1].split(".")[0] : 0;
+		} else {
+			this.browser.version = {};
+			this.browser.version.all = 0;
+			this.browser.version.major = 0;
 		}
 
 		return this.browser;

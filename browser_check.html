@@ -11,7 +11,8 @@
 		<script type="text/javascript" src="./browser_check.js"></script>
 		<script type="text/javascript">
 			var browser = new BrowserCheck();
-			console.log("browser", browser.get());
+			var browserJson = browser.get();
+			console.log("browser", "type:", browserJson.type, "all:", browserJson.version.all, "major:", browserJson.version.major);
 		</script>
 	</body>
 </html>
